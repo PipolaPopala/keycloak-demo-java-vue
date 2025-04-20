@@ -9,12 +9,7 @@ const isAuthenticated = ref(false);
 
 const initAuth = async () => {
   try {
-    const authenticated = await keycloak.init({
-      onLoad: "check-sso",
-      pkceMethod: "S256",
-      silentCheckSsoRedirectUri:
-        window.location.origin + "/silent-check-sso.html",
-    });
+    const authenticated = await keycloak.init();
 
     isAuthenticated.value = authenticated;
     if (authenticated) {

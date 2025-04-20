@@ -38,9 +38,11 @@ const handleLogin = async () => {
 
   try {
     const response = await axios.post(
-      `http://localhost:8080/realms/test_realm/protocol/openid-connect/token`,
+      `${import.meta.env.VITE_KEYCLOAK_URL}/realms/${
+        import.meta.env.VITE_KEYCLOAK_REALM
+      }/protocol/openid-connect/token`,
       new URLSearchParams({
-        client_id: "app_client",
+        client_id: import.meta.env.VITE_KEYCLOAK_CLIENT,
         client_secret: import.meta.env.VITE_CLIENT_SECRET,
         username: form.value.username,
         password: form.value.password,
