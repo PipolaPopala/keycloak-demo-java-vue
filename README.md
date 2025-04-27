@@ -33,6 +33,7 @@ docker run --name kc_demo -d -p 8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -
 ```
 
 После запуска Keycloak необходимо минимально настроить сервер:
+(p.s. визуальная инструкция здесь: [keycloak/README.md](keycloak/README.md))
 
 1. Создать новый realm (`demo_realm`)
 2. Создать клиент (`demo_client`) с настройками:
@@ -40,9 +41,9 @@ docker run --name kc_demo -d -p 8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -
 - Authentication flow: `off`
 - Direct access grants: `On`
 3. **Важно**: Скопировать секретный ключ клиента из настроек Keycloak и обновить его в файле `backend/src/main/resources/application.properties` в переменной `keycloak.credentials.secret`
-4. Создать пользователя (`demo_user`).
+4. Создать пользователя (`demo_user`)
 **Важно**: для пользователя необходимо заполнить все поля:
-"Username", "Email", "First name", "Last name".
+"Username", "Email", "First name", "Last name"
 5. Задать пользователю пароль (`1234`, temporary: `off`)
 
 ### 2. Запуск бэкенда
