@@ -1,5 +1,60 @@
-# Vue 3 + Vite
+# Фронтенд на Vue.js с интеграцией Keycloak
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Этот документ описывает процесс настройки и запуска фронтенд-части приложения, построенной на Vue.js с интеграцией Keycloak через бэкенд для аутентификации и авторизации.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Технологический стек
+
+- Vue 3
+- Vite
+- Vue Router
+- Axios
+- Pinia
+
+## Запуск в Docker
+
+### Предварительные требования
+
+- Docker установлен на вашей системе
+- Keycloak запущен
+- Бэкенд запущен
+
+### Сборка Docker-образа
+
+Для сборки Docker-образа выполните следующую команду в директории `/frontend`:
+
+```bash
+docker build -t kc_demo_frontend_image .
+```
+
+### Запуск контейнера
+
+Для запуска контейнера выполните:
+
+```bash
+docker run --name kc_demo_frontend_container -d -p 5173:80 kc_demo_frontend_image
+```
+
+## Структура проекта
+
+```
+src/
+├── components/   # Компоненты Vue
+├── layouts/      # Лейауты для страниц
+├── services/     # Сервисы для работы с API
+├── stores/       # Хранилища состояния
+├── views/        # Компоненты страниц
+├── App.vue       # Корневой компонент
+├── router.js     # Настройка маршрутизации
+└── main.js       # Точка входа
+```
+
+## Аутентификация и авторизация
+
+Фронтенд взаимодействует с Keycloak через бэкенд-сервер. Процесс аутентификации:
+
+1. Пользователь вводит учетные данные на странице входа
+2. Фронтенд отправляет запрос на бэкенд (`/api/auth/login`)
+3. Бэкенд взаимодействует с Keycloak и возвращает токены
+4. Фронтенд сохраняет токены и использует их для последующих запросов
+
+Для защиты маршрутов используется механизм guard в Vue Router, который проверяет наличие действительного токена перед доступом к защищенным страницам.

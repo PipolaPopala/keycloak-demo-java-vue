@@ -1,0 +1,51 @@
+# Игнорировать зависимости
+node_modules/
+
+# Игнорировать файлы сборки
+dist/
+dist-ssr/
+.output/
+
+# Игнорировать локальные файлы
+.DS_Store
+*.local
+
+# Игнорировать логи
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Игнорировать файлы IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Игнорировать файлы окружения (кроме .env.production)
+#.env
+.env.development
+.env.local
+.env.*.local
+
+# Игнорировать кэш
+.npm
+.eslintcache
+.stylelintcache
+
+# Игнорировать файлы системы контроля версий
+.git/
+.gitignore
+
+# Игнорировать тесты
+**/__tests__/
+**/*.spec.js
+**/*.test.js
+
+# Игнорировать README
+README.md

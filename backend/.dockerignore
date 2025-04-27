@@ -1,0 +1,45 @@
+# Игнорировать файлы сборки
+.gradle/
+build/
+out/
+bin/
+
+# Игнорировать файлы IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+.vscode/
+
+# Игнорировать логи
+logs/
+*.log
+
+# Игнорировать временные файлы
+*.tmp
+*.bak
+*.swp
+*~.nib
+
+# Игнорировать тестовые файлы при сборке продакшн-образа
+src/test/
+
+# Игнорировать локальные конфигурационные файлы
+*.local.properties
+
+# Игнорировать файлы системы контроля версий
+.git/
+.gitignore
+.gitattributes
+
+# Игнорировать README
+README.md
+
+# Игнорировать скрипты, не нужные для работы приложения
+*.sh
+*.bat
+gradlew
+gradlew.bat
