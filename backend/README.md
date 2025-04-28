@@ -25,7 +25,7 @@
 docker build -t kc_demo_backend_image .
 ```
 
-### Запуск контейнера
+### Запуск контейнера yf gjhne http://localhost:8888
 
 Для запуска контейнера выполните:
 

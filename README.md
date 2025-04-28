@@ -25,7 +25,7 @@
 
 Все компоненты проекта можно запустить в Docker-контейнерах.
 
-### 1. Запуск Keycloak
+### 1. Запуск Keycloak на порту http://localhost:8080
 
 ```bash
 # Запуск Keycloak в Docker
@@ -46,7 +46,7 @@ docker run --name kc_demo -d -p 8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -
 "Username", "Email", "First name", "Last name"
 5. Задать пользователю пароль (`1234`, temporary: `off`)
 
-### 2. Запуск бэкенда
+### 2. Запуск бэкенда http://localhost:8888
 
 Подробные инструкции по запуску бэкенда находятся в файле [backend/README.md](backend/README.md).
 
@@ -58,7 +58,7 @@ docker build -t kc_demo_backend_image .
 docker run --name kc_demo_backend_container -d -p 8888:8888 kc_demo_backend_image
 ```
 
-### 3. Запуск фронтенда
+### 3. Запуск фронтенда http://localhost:5173
 
 Подробные инструкции по запуску фронтенда находятся в файле [frontend/README.md](frontend/README.md).
 

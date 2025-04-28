@@ -26,7 +26,7 @@
 docker build -t kc_demo_frontend_image .
 ```
 
-### Запуск контейнера
+### Запуск контейнера http://localhost:5173
 
 Для запуска контейнера выполните:
 
