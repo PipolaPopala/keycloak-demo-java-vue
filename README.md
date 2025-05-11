@@ -25,7 +25,7 @@
 
 Все компоненты проекта можно запустить в Docker-контейнерах.
 
-### 1. Запуск Keycloak на порту http://localhost:8080
+### 1. Запуск Keycloak http://localhost:8080
 
 ```bash
 # Запуск Keycloak в Docker
